@@ -103,6 +103,7 @@
             this.Controls.Add(this.choose);
             this.Name = "FormMain";
             this.Text = "Rename Files";
+            this.Load += new System.EventHandler(this.FormMain_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
