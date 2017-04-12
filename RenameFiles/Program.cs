@@ -10,7 +10,7 @@ namespace RenameFiles {
     public class Program {
         static Program p = null;
         static Program getController() {
-            if(p == null) {
+            if (p == null) {
                 p = new Program();
             }
             return p;
@@ -27,17 +27,17 @@ namespace RenameFiles {
 
         public bool RenameFiles(String desPath, String formatStr) {
             var files = System.IO.Directory.EnumerateFiles(desPath);
-            if(formatStr.Length == 0 || !formatStr.Contains("{0}")) {
+            if (formatStr.Length == 0 || !formatStr.Contains("{0")) {
                 formatStr = "{0}.jpg";
             }
             int count = 1;
             String newPath = System.IO.Path.Combine(GetDesktopDirectory(), GetBase64String());
             NewDirectory(newPath);
             foreach (String fileName in files) {
-                if (new System.IO.FileInfo(fileName).Length > 1024 * 75) {
-                    System.IO.File.Copy(fileName, System.IO.Path.Combine(newPath, String.Format(formatStr, count)));
-                    count++;
-                }
+                //if (new System.IO.FileInfo(fileName).Length > 1024 * 75) {
+                System.IO.File.Copy(fileName, System.IO.Path.Combine(newPath, String.Format(formatStr, count)));
+                count++;
+                //}
             }
             return true;
         }
@@ -48,13 +48,13 @@ namespace RenameFiles {
             doc = doc.Substring(0, doc.LastIndexOf("\\"));
             String desTemp = System.IO.Path.Combine(doc, "AppData\\Local\\Packages");
             var files = System.IO.Directory.EnumerateDirectories(desTemp);
-            foreach(String t in files) {
-                if(t.Contains("Microsoft.Windows.ContentDeliveryManager")) {
+            foreach (String t in files) {
+                if (t.Contains("Microsoft.Windows.ContentDeliveryManager")) {
                     desPath = t;
                     break;
                 }
             }
-            if(desPath.Length > 0) {
+            if (desPath.Length > 0) {
                 desPath = System.IO.Path.Combine(desPath, "LocalState\\Assets");
                 return desPath;
             }
@@ -81,7 +81,7 @@ namespace RenameFiles {
         }
 
         void NewDirectory(String path) {
-            if(!System.IO.Directory.Exists(path)) {
+            if (!System.IO.Directory.Exists(path)) {
                 System.IO.Directory.CreateDirectory(path);
             }
         }
