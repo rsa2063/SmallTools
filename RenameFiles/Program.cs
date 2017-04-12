@@ -27,7 +27,7 @@ namespace RenameFiles {
 
         public bool RenameFiles(String desPath, String formatStr) {
             var files = System.IO.Directory.EnumerateFiles(desPath);
-            if(formatStr.Length == 0) {
+            if(formatStr.Length == 0 || !formatStr.Contains("{0}")) {
                 formatStr = "{0}.jpg";
             }
             int count = 1;
@@ -40,16 +40,6 @@ namespace RenameFiles {
                 }
             }
             return true;
-        }
-
-        public String GetWin10LockScreenWallPaper() {
-            if(IsWindows10()) {
-                GetWallPaperDirectory();
-            }
-             //var name = (from x in new System.Management.ManagementObjectSearcher("SELECT Caption FROM Win32_OperatingSystem").Get().Cast<ManagementObject>()
-            //            select x.GetPropertyValue("Caption")).FirstOrDefault();
-            //return name != null ? name.ToString() : "Unknown";
-            return "";
         }
 
         public String GetWallPaperDirectory() {
