@@ -19,8 +19,10 @@ namespace RenameFiles {
         }
 
         private void FormMain_Load(object sender, EventArgs e) {
-            desPath = p.GetWallPaperDirectory();
-            pathDisplay.Text = desPath;
+            if (p.IsWin10()) {
+                desPath = p.GetWallPaperDirectory();
+                pathDisplay.Text = desPath;
+            }
         }
 
         private void choose_Click(object sender, EventArgs e) {
