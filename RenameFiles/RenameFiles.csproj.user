@@ -9,5 +9,6 @@
     <ErrorReportUrlHistory />
     <FallbackCulture>zh-CN</FallbackCulture>
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
+    <PublishUrlHistory>pub\</PublishUrlHistory>
   </PropertyGroup>
 </Project>

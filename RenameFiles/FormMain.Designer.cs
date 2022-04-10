@@ -30,6 +30,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pathDisplay = new System.Windows.Forms.TextBox();
+            this.inputDesPath = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // choose
@@ -80,7 +81,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(750, 76);
             this.label2.TabIndex = 5;
-            this.label2.Text = "example : test-{0}.jpg   -> test-1.jpg test-2.jpg\r\n";
+            this.label2.Text = "example : test-{0:d2}.jpg   -> test-01.jpg test-02.jpg\r\n";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pathDisplay
@@ -96,12 +97,20 @@
             this.pathDisplay.TabIndex = 6;
             this.pathDisplay.Text = "...";
             // 
+            // inputDesPath
+            // 
+            this.inputDesPath.Location = new System.Drawing.Point(150, 272);
+            this.inputDesPath.Name = "inputDesPath";
+            this.inputDesPath.Size = new System.Drawing.Size(558, 34);
+            this.inputDesPath.TabIndex = 7;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(858, 459);
+            this.Controls.Add(this.inputDesPath);
             this.Controls.Add(this.pathDisplay);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -127,6 +136,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox pathDisplay;
+        private System.Windows.Forms.TextBox inputDesPath;
     }
 }
 

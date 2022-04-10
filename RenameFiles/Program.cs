@@ -26,12 +26,14 @@ namespace RenameFiles {
         }
 
         public bool RenameFiles(String desPath, String formatStr) {
+            string sub = System.IO.Path.DirectorySeparatorChar + "sub";
             var files = System.IO.Directory.EnumerateFiles(desPath);
-            if (formatStr.Length == 0 || !formatStr.Contains("{0")) {
+            if (formatStr.Length == 0) {
                 formatStr = "{0}.jpg";
+                sub = "";
             }
             int count = 1;
-            String newPath = System.IO.Path.Combine(GetDesktopDirectory(), GetBase64String());
+            String newPath = System.IO.Path.Combine(GetDesktopDirectory() + sub, GetBase64String());
             NewDirectory(newPath);
             foreach (String fileName in files) {
                 //if (new System.IO.FileInfo(fileName).Length > 1024 * 75) {
@@ -72,7 +74,7 @@ namespace RenameFiles {
             return productName.StartsWith("Windows 10");
         }
 
-        String GetDesktopDirectory() {
+        public String GetDesktopDirectory() {
             return Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
         }
 

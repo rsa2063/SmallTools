@@ -23,6 +23,7 @@ namespace RenameFiles {
                 desPath = p.GetWallPaperDirectory();
                 pathDisplay.Text = desPath;
             }
+            inputDesPath.Text = System.IO.Path.Combine(p.GetDesktopDirectory(), "work");
         }
 
         private void choose_Click(object sender, EventArgs e) {
@@ -39,6 +40,9 @@ namespace RenameFiles {
         }
 
         private void rename_Click(object sender, EventArgs e) {
+            if(inputDesPath.Text.Length > 0) {
+                pathDisplay.Text = desPath = inputDesPath.Text;
+            }
             try {
                 if(p.RenameFiles(desPath, formatStr.Text)) {
                     MessageBox.Show("rename successfullly");
