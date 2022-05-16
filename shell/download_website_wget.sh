@@ -10,3 +10,5 @@ wget \
      --domains docs.spring.io \
      --no-parent \
          docs.spring.io/spring-framework/docs/5.3.x/reference/html/
+
+wget --recursive --no-clobber --page-requisites --html-extension --convert-links --restrict-file-names=windows --domains docs.spring.io --no-parent	 
