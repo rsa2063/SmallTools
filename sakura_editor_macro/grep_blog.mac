@@ -1,0 +1,2 @@
+﻿//キーボードマクロのファイル
+S_Grep('\\d+', '*', 'C:\\Users\\Shin.SHINJI-PC2\\Documents\\Code\\blog\\hugo-source\\content', 25393, 99);	// Grep

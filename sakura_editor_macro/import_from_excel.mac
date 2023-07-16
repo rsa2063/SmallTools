@@ -1,0 +1,7 @@
+//Keyboard macro file
+ReplaceAll('\\t', '\',\'', 6); // Replace All
+ReDraw(0); // Redraw
+ReplaceAll('^', 'insert into XXX_YYY select \'', 6); // Replace All
+ReDraw(0); // Redraw
+ReplaceAll('$', '\' from dual ;commit;', 6); // Replace All
+ReDraw(0); // Redraw
