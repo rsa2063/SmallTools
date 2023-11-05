@@ -23,7 +23,7 @@ log=$root/`date '+%Y_%m_%d_%H_%M_%S'`.log
 
 cd $1;
 
-origin=(*);
+origin=(`ls`);
 
 echo ${origin[*]}>`expr $log`
 echo "---">>`expr $log`
@@ -33,17 +33,17 @@ for i in ${origin[*]};do
 done
 echo
 
-echo "origin length is "${#origin[*]}
+echo "origin length is `ls | wc -l`"
 
 cd ..
 cd $2;
-sub=(*);
+sub=(`ls`);
 echo ${sub[*]}>>`expr $log`
 echo "sub files:"
 for i in ${sub[*]}; do
 	echo "  "$i;
 done
-echo "sub length is "${#sub[*]}；
+echo "sub length is `ls | wc -l`"
 echo
 
 if [ ${#origin[*]} != ${#sub[*]} ]; then
